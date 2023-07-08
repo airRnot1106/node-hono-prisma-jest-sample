@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "start": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.0.2",
+    "hono": "^3.2.7"
+  },
+  "devDependencies": {
+    "@tsconfig/strictest": "^2.0.1",
+    "@types/node": "^20.4.1",
+    "tsx": "^3.12.2",
+    "typescript": "^5.1.6"
+  }
+}
