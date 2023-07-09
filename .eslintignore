@@ -1,0 +1,15 @@
+# config
+.eslintrc.cjs
+.prettierrc
+tsconfig.json
+jest.config.js
+jest.setup.js
+
+# scripts
+scripts/
+
+# build dir
+**/dist/
+
+# generated dir
+**/generated/

@@ -1,0 +1,22 @@
+{
+  "extends": "@tsconfig/strictest/tsconfig.json",
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "outDir": "dist",
+    "noPropertyAccessFromIndexSignature": false,
+    "noImplicitReturns": false,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "~/*": ["./*"]
+    },
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "types": ["@types/jest", "@quramy/jest-prisma"]
+  },
+  "include": ["src/**/*", "__tests__/**/*", "scripts/**/*"]
+}
