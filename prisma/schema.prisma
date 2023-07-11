@@ -11,6 +11,12 @@ generator zod {
   createRelationValuesTypes = true
 }
 
+generator fabbrica {
+  provider = "prisma-fabbrica"
+  output   = "../fabbrica"
+  tsconfig = "../tsconfig.json"
+}
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")

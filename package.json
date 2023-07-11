@@ -20,7 +20,8 @@
     "zod-prisma-types": "^2.7.4"
   },
   "devDependencies": {
-    "@quramy/jest-prisma": "^1.5.0",
+    "@quramy/jest-prisma-node": "^1.5.0",
+    "@quramy/prisma-fabbrica": "^1.1.0",
     "@tsconfig/strictest": "^2.0.1",
     "@types/jest": "^29.5.2",
     "@types/node": "^20.4.1",

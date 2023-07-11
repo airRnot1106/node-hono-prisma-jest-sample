@@ -1,46 +1,31 @@
 import prisma from '@/libs/prisma';
+import { defineUserFactory } from '~/fabbrica';
 
 describe('User', () => {
   describe('add user', () => {
     it('creates a new user with valid input', async () => {
-      const email = 'test@example.com';
-      const name = 'test';
-
-      const user = await prisma.user.create({
-        data: {
-          email,
-          name,
-        },
-      });
+      const userFactory = defineUserFactory();
+      const user = await userFactory.create();
 
       expect(
         await prisma.user.findUnique({
           where: {
-            email,
+            email: user.email,
           },
         })
       ).toStrictEqual(user);
     });
 
     it('throws an error if email is already in use', async () => {
-      const email = 'test@example.com';
-      const name = 'test';
-
-      await prisma.user.create({
-        data: {
-          email,
-          name,
+      const userFactory = defineUserFactory({
+        defaultData: {
+          email: 'test@example.com',
         },
       });
 
-      await expect(
-        prisma.user.create({
-          data: {
-            email,
-            name: 'test2',
-          },
-        })
-      ).rejects.toMatchObject({
+      await userFactory.create();
+
+      await expect(userFactory.create()).rejects.toMatchObject({
         name: 'PrismaClientKnownRequestError',
       });
     });
