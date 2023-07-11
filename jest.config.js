@@ -7,6 +7,9 @@ module.exports = {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^~/(.*)$': '<rootDir>/$1',
   },
-  testEnvironment: '@quramy/jest-prisma/environment',
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  testEnvironment: '@quramy/jest-prisma-node/environment',
+  setupFilesAfterEnv: [
+    '@quramy/prisma-fabbrica/scripts/jest-prisma',
+    '<rootDir>/jest.setup.js',
+  ],
 };
